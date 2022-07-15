@@ -1,0 +1,21 @@
+name: Generate fonts pbf
+on: push
+
+jobs:
+  generate-fonts-pbf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Generate fonts pbf
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/erbium
+      - run: |
+          npm install
+          node generate.js
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.DEPLOY_TOKEN }}
+          publish_dir: ./_output/

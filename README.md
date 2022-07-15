@@ -32,6 +32,8 @@ The following fonts that are available in Mapbox Studio are supported.
 
 ## Package the Fonts
 
+node version: lts/erbium (v12.22.12)
+
 Install required packages:
 
 ```
